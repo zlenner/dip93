@@ -1,8 +1,6 @@
 import wordlist from './wordlists/en.json';
 import { Buffer } from 'buffer';
-
-// Main library exports - these are packaged in your distributable
-import { v4 as uuidv4 } from 'uuid';
+import { randomBytes } from 'crypto';
 
 const GROUP_SIZE = 10;
 
@@ -22,15 +20,7 @@ function bytesToWords(bytesVal: Buffer): string {
     return words.join(' ');
 }
 
-function uuidToWords(uuidString: string): string {
-    // Convert UUID string to a UUID object
-    const uuidBytes = Buffer.from(uuidString.replace(/-/g, ''), 'hex');
-
-    // Convert bytes to words
-    return bytesToWords(uuidBytes);
-}
-
-export const generate = () => {
-    const uuidString = uuidv4();
-    return uuidToWords(uuidString);
+export const generate = (num_words: number = Math.ceil(128 / GROUP_SIZE)) => {
+    const bytes = randomBytes(Math.ceil(num_words * GROUP_SIZE))
+    return bytesToWords(bytes)
 }
