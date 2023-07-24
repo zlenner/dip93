@@ -1,6 +1,6 @@
 import wordlist from './wordlists/en.json';
 import { Buffer } from 'buffer';
-import { randomBytes } from 'crypto';
+import randomBytes from 'randombytes';
 
 const GROUP_SIZE = 10;
 
