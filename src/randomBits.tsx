@@ -1,6 +1,7 @@
 import { Buffer } from 'buffer';
 
-const crypto = globalThis?.crypto || require('crypto');
+const crypto = globalThis?.crypto || require('node:crypto');
+console.log(globalThis?.crypto ? 'dip93: Using browser crypto' : 'dip93: Using node crypto')
 
 function randomBits(n: number) {
     // Create a new array of bytes with the required length, rounded up
