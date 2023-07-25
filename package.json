@@ -1,6 +1,6 @@
 {
   "name": "dip93",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "DIP93: An alternative to the BIP39 mnemonic standard for generating shorter phrases, while being similarly secure and random.",
   "repository": {
     "type": "git",
