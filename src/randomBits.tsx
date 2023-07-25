@@ -1,5 +1,7 @@
 import { Buffer } from 'buffer';
 
+const crypto = globalThis?.crypto || require('crypto');
+
 function randomBits(n: number) {
     // Create a new array of bytes with the required length, rounded up
     const byteLength = Math.floor(n / 8);
