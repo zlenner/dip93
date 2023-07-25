@@ -1,6 +1,6 @@
 {
   "name": "dip93",
-  "version": "1.1.3",
+  "version": "1.1.5",
   "description": "DIP93: An alternative to the BIP39 mnemonic standard for generating shorter phrases, while being similarly secure and random.",
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
     "start": "vite --host --open",
     "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
     "watch": "tsc && vite build --watch",
+    "pub": "npm run build && npm publish --access public",
     "lint:scripts": "eslint . --ext .ts",
     "lint:styles": "stylelint ./**/*.{css,scss}",
     "format:scripts": "prettier . --write",
