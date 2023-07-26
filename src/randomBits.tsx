@@ -4,7 +4,7 @@ const crypto = globalThis?.crypto || require('node:crypto');
 console.log(globalThis?.crypto ? 'dip93: Using browser crypto' : 'dip93: Using node crypto')
 
 function randomBits(n: number) {
-    // Create a new array of bytes with the required length, rounded up
+    // Create a new array of bytes with the required length, rounded down
     const byteLength = Math.floor(n / 8);
     const array = new Uint8Array(byteLength);
 
